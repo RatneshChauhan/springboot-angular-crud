@@ -6,7 +6,7 @@ An implementation of Spring Boot with spring data REST and Angular 4 with materi
 This is how it looks like
 ===============================
 
-![alt text](https://github.com/RatneshChauhan/springboot-angular/blob/master/UI/screen-shot-data_table.png "Editable Data Table")
+![alt text](https://github.com/RatneshChauhan/springboot-angular-crud/blob/master/UI/screen-shot-data_table.png "Editable Data Table")
 
 
 Author
