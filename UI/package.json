@@ -1,5 +1,5 @@
 {
-  "name": "angular-editable-table",
+  "name": "angular-inline-editable-table",
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
