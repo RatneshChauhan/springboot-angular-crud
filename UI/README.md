@@ -12,9 +12,9 @@ How to get it
 =================
 You can get editable data table via npm by running the following command to add it as a new dependency to your package.json file and import it in your module
 
-<pre>npm install angular-editable-datatable</pre>
+<pre>npm install angular-editable-table</pre>
 
-<code>import { EditableTableModule } from 'angular-editable-datatable'
+<code>import { EditableTableModule } from 'angular-editable-table'
  
 @NgModule( {
   imports: [
