@@ -6,7 +6,7 @@ Angular4 Editable Data Table: A reusable module which can be consumed like any o
 Git repo
 =================
 
-https://github.com/RatneshChauhan/springboot-angular
+https://github.com/RatneshChauhan/springboot-angular-crud
 
 How to get it
 =================
@@ -152,7 +152,7 @@ $theme: mat-light-theme($primary, $accent);
 Complete source code and working example is here 
 =================================================
 
-https://github.com/RatneshChauhan/springboot-angular
+https://github.com/RatneshChauhan/springboot-angular-crud
 
 Author
 ===============
