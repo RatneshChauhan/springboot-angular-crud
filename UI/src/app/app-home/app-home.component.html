@@ -1,0 +1,14 @@
+<!-- Editable Table -->
+<div *ngIf="dataLoaded">
+<app-editable-table 
+  [columns]="['id','firstName','lastName','createdAt','updatedAt', 'Actions']"
+  [editableColumns]="['firstName','lastName','class','level']"
+  [data]="tableData" 
+  [pageSizeOptions]="[5,6,9,12,20,50,100]" 
+  [searchable]="true" 
+  (action)="action($event)"
+  [notification]="yourMessage"
+  [maxChar]="23">
+</app-editable-table>
+</div>
+  

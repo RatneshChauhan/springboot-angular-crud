@@ -1,0 +1,11 @@
+@import '~@angular/material/theming';
+@import '~material-design-icons/iconfont/material-icons.css';
+@import '~angular-notifier/styles.scss';
+@include mat-core();
+
+$primary: mat-palette($mat-light-blue);
+$accent:  mat-palette($mat-teal);
+
+$theme: mat-light-theme($primary, $accent);
+
+@include angular-material-theme($theme);

@@ -1,0 +1,10 @@
+/* Application header  */
+
+.header { text-align:center; margin:15px 0px; }
+  ul { list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: #03a9f4; }
+  li { float: left; }
+  li a { display: block; color: white; text-align: center; padding: 15px; text-decoration: none; }
+  li a:hover { background-color: black; }
+
+
+  

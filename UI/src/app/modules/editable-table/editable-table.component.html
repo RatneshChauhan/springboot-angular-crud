@@ -1,0 +1,78 @@
+<!-- CLI -->
+<!-- To install angualr CLI -->
+<!-- npm install -g @angular/cli@latest -->
+<!-- To create new angular project -->
+<!-- ng new my-app -->
+<!-- To generate a component using use below command -->
+<!-- ng generate component editable-data-table-RC1 -->
+<!-- To generate a module -->
+<!-- ng generate module modules/myheader -->
+<!-- To generate a service -->
+<!-- ng generate service data -->
+<!-- To generate a model class for data types -->
+<!-- ng generate class customers model -->
+<!-- To deprecate a published npm package -->
+<!-- npm deprecate "react-error-boundary-component-fallback2@1.0.0" "Updated readme in next version"
+ -->
+
+
+<!-- Search -->
+
+<mat-form-field *ngIf="isSearchable">
+  <input matInput #search (keyup)="applyFilter($event.target.value)" placeholder="Search">
+</mat-form-field>
+
+<!-- Table -->
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+  <!--  Columns -->
+
+  <ng-container *ngFor="let column of columns; let i = index" matColumnDef="{{column}}">
+
+    <th mat-header-cell *matHeaderCellDef> {{column.toUpperCase()}} </th>
+
+    <td mat-cell *matCellDef="let data; let j = index">
+
+      <!-- Normal column data display -->
+      <p *ngIf="j!==k">{{data[column]}}</p>
+
+      <!-- When only Provided fields are editable -->
+      <mat-form-field *ngIf="(j===k && column.toLowerCase()!=='actions') && (editableFields && editableFields.indexOf(column) !== -1)">
+        <!-- Spinner -->
+        <ngx-spinner bdColor="white" size="small" color="#03a9f4" type="square-loader">
+        </ngx-spinner>
+        <input matInput #input maxlength="{{maxCharsInColumn}}" placeholder="{{column.toUpperCase()}}" [value]="data[column]" [(ngModel)]="data[column]"
+          autofocus>
+        <mat-hint align="end" *ngIf="maxCharsInColumn">{{input.value?.length || 0}}/{{maxCharsInColumn}}</mat-hint>
+      </mat-form-field>
+
+      <!-- When All fields are editable -->
+      <mat-form-field *ngIf="(j===k && column.toLowerCase()!=='actions') && (!editableFields)" >
+        <!-- Spinner -->
+        <ngx-spinner bdColor="white" size="small" color="#03a9f4" type="square-loader">
+        </ngx-spinner>
+        <input matInput #input maxlength="{{maxCharsInColumn}}" placeholder="{{column.toUpperCase()}}" [value]="data[column]" [(ngModel)]="data[column]" autofocus>
+        <mat-hint align="end" *ngIf="maxCharsInColumn">{{input.value?.length || 0}}/{{maxCharsInColumn}}</mat-hint>
+      </mat-form-field>
+
+      <!-- Actions icons -->
+      <mat-icon *ngIf="(column && column.toLowerCase()==='actions' && j!==k)" matTooltip="Delete row" class="material-icons" color="primary" (click)="openDialog(data)">delete</mat-icon>
+      <mat-icon *ngIf="(column && column.toLowerCase()==='actions' && j!==k)" matTooltip="Edit row" class="material-icons" color="primary" (click)="openEdit(data, j)">editors</mat-icon>
+
+      <mat-icon *ngIf="(column && column.toLowerCase()==='actions' && j===k)" matTooltip="Update row" class="material-icons" color="primary" (click)="doneEdit(data)">done</mat-icon>
+      <mat-icon *ngIf="(column && column.toLowerCase()==='actions' && j===k)" matTooltip="Close edit" class="material-icons" color="primary" (click)="closeEdit()">clear</mat-icon>
+    </td>
+
+  </ng-container>
+
+  <!-- Rows -->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'highlight': selectedRowIndex == row.id}"></tr>
+
+</table>
+<!-- Pagination -->
+<mat-paginator [pageSizeOptions]="paginationOptions" showFirstLastButtons></mat-paginator>
+
+<!-- User Notifications -->
+<notifier-container></notifier-container>
