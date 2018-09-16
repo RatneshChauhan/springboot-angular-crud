@@ -1,6 +1,6 @@
-## Editable Data Table Module
+## Inline Editable Data Table Module
 
-Angular4 Editable Data Table: A reusable module which can be consumed like any other Angular modules.
+Angular4 Inline Editable Data Table: A reusable module which can be consumed like any other Angular modules.
 ===========================================
 
 Git repo
@@ -10,11 +10,11 @@ https://github.com/RatneshChauhan/springboot-angular-crud
 
 How to get it
 =================
-You can get editable data table via npm by running the following command to add it as a new dependency to your package.json file and import it in your module
+You can get inline editable data table via npm by running the following command to add it as a new dependency to your package.json file and import it in your module
 
-<pre>npm install angular-editable-table</pre>
+<pre>npm install angular-inline-editable-table</pre>
 
-<code>import { EditableTableModule } from 'angular-editable-table'
+<code>import { EditableTableModule } from 'angular-inline-editable-table'
  
 @NgModule( {
   imports: [
