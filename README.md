@@ -8,6 +8,10 @@ This is how it looks like
 
 ![alt text](https://github.com/RatneshChauhan/springboot-angular-crud/blob/master/UI/screen-shot-data_table.png "Editable Data Table")
 
+Published as NPM package
+===========================
+
+https://www.npmjs.com/package/angular-inline-editable-table/v/2.0.0
 
 Author
 ===============
