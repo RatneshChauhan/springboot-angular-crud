@@ -39,7 +39,8 @@ Usage
 <div *ngIf="dataLoaded">
 <app-editable-table 
   [columns]="['id','firstName','lastName','createdAt','updatedAt', 'Actions']"
-  [editableColumns]="['firstName','lastName','class','level']"
+  [editableColumns] = "['lastName', 'createdAt', 'firstName']"
+  [dateColumns] ="['createdAt','updatedAt']"
   [data]="tableData" 
   [pageSizeOptions]="[5,6,9,12,20,50,100]" 
   [searchable]="true" 

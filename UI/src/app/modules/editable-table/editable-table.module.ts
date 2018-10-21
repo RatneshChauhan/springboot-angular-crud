@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {
   MatTableModule, MatPaginatorModule, MatFormFieldModule, MatInputModule, MatDialogModule,
-  MatButtonModule, MatIconModule, MatGridListModule, MatSortModule, MatCardModule, MatTooltipModule
+  MatButtonModule, MatIconModule, MatGridListModule, MatSortModule, MatCardModule, MatTooltipModule, MatDatepickerModule, MatNativeDateModule
 } from '@angular/material';
 
 // https://www.npmjs.com/package/angular-notifier
@@ -18,7 +18,7 @@ import { DialogComponent } from './dialog/dialog.component';
 @NgModule({
   imports: [
     CommonModule, MatTableModule, MatPaginatorModule, MatFormFieldModule, MatInputModule, MatDialogModule,
-    MatButtonModule, MatIconModule, MatGridListModule, MatSortModule, MatCardModule, MatTooltipModule,
+    MatButtonModule, MatIconModule, MatGridListModule, MatSortModule, MatCardModule, MatTooltipModule, MatDatepickerModule, MatNativeDateModule,
     FormsModule,
     ReactiveFormsModule,
     NgxSpinnerModule,

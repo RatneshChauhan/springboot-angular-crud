@@ -1,9 +1,39 @@
-<div>
-
-  Delete Row?</div>
+<!-- Delete a row -->
+<div *ngIf="!data.columns">Delete Row?</div>
 <br/>
-<div>
-  <button class="mat-raised-button mat-primary" (click)="delete()">Delete</button>
-  <button class="mat-raised-button" (click)="close('')">Close</button>
+<div *ngIf="!data.columns">
+  <mat-dialog-actions>
+    <button class="mat-raised-button mat-primary" (click)="delete()">Delete</button>
+    <button class="mat-raised-button" (click)="close('')">Cancel</button>
+  </mat-dialog-actions>
+</div>
 
+
+<!-- Add a row -->
+<div *ngIf="data.columns">
+  <p mat-dialog-title>Add Row</p>
+  <mat-dialog-content>
+    <ng-container *ngFor="let column of data.columns; let i = index">
+      <mat-form-field class="example-full-width" [formGroup]="addupForm" *ngIf=" data.dateFields && data.dateFields.indexOf(column) === -1 && column.toUpperCase()!=='ID' && column.toUpperCase()!=='ACTIONS'">
+        <input matInput placeholder="{{column.toUpperCase()}}" formControlName="{{column}}">
+      </mat-form-field>
+      <div *ngIf="(data.dateFields && data.dateFields.indexOf(column) !== -1)">
+
+        <mat-form-field [formGroup]="addupForm">
+          <input matInput #dateInput [matDatepicker]="picker" formControlName="{{column}}" placeholder="PICK A DATE" [value]="data[column]"
+            [(ngModel)]="data[column]">
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        </mat-form-field>
+      </div>
+      <br/>
+    </ng-container>
+  </mat-dialog-content>
+</div>
+<br/>
+<div *ngIf="data.columns">
+  <mat-dialog-actions>
+    <button class="mat-raised-button mat-primary" (click)="add()">Save</button>
+    <button class="mat-raised-button" (click)="close('')">Cancel</button>
+  </mat-dialog-actions>
 </div>

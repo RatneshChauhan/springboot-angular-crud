@@ -9,6 +9,9 @@ table {
   .highlight{
     background:whitesmoke; 
   }
+  /* #addRowDv{
+    margin-left: 1000px;
+  } */
 
   /* mat-form-field {
     width: 80px;
